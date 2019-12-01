@@ -1,5 +1,6 @@
 package com.kgu.translation.controller
 
+import com.kgu.translation.utils.isCustomEmpty
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -13,6 +14,7 @@ class HelloController {
 
     @RequestMapping("/hello")
     fun hello() : String {
+        "wow!!!".isCustomEmpty()
         return "hello world";
     }
 }
