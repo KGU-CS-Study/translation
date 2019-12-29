@@ -1,0 +1,4 @@
+kakao:
+  url: https://kapi.kakao.com
+  auth:
+    key: ec8fdc7d922bdd7b860bda553df9cc6c
