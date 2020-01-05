@@ -36,14 +36,14 @@ class KakaoAdaptor (@Value("\${kakao.auth.key}") private val key: String,
                 .toUri()
         val headers = HttpHeaders()
         headers.add("Authorization", "KakaoAK $key")
-        headers.contentType = MediaType.APPLICATION_JSON_UTF8
+        headers.contentType = MediaType.APPLICATION_JSON
 
         val rq = RequestEntity<String>(headers, HttpMethod.GET, url)
         var response : ResponseEntity<TranslationText>
         try {
             response = kakaoRestTemplate.exchange(rq, TranslationText::class.java)
         } catch (e : HttpStatusCodeException) {
-            throw RuntimeException("")
+            throw RuntimeException("Not Invalid Something")
         }
         return response.body!!
     }
